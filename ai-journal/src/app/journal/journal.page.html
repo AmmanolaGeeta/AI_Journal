@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>AI Journal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <textarea placeholder="Write today's journal..." [(ngModel)]="content"  rows="7"  cols="40" autoGrow></textarea>
+<!-- <input [(ngModel)]="content" /> -->
+  <ion-button expand="block" (click)="saveEntry()">Analyze & Save</ion-button>
+
+  <ion-list *ngIf="entries.length">
+    <ion-item-divider>Previous Entries</ion-item-divider>
+    <ion-item *ngFor="let entry of entries">
+      <ion-label>
+        <h3>{{ entry.date | date:'mediumDate' }}</h3>
+        <p><strong>Sentiment:</strong> {{ entry.sentiment }}</p>
+        <p><strong>Tags:</strong> {{ entry.tags.join(', ') }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

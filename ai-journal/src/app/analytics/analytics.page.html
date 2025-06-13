@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mood Analytics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <canvas baseChart
+    [data]="chartData"
+    [options]="chartOptions"
+    chartType="pie"
+    >
+  </canvas>
+</ion-content>
