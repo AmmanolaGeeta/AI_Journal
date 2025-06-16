@@ -1,24 +1,33 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>AI Journal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openGraph()">
+        <ion-icon name="bar-chart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
-  <textarea placeholder="Write today's journal..." [(ngModel)]="content"  rows="7"  cols="40" autoGrow></textarea>
-<!-- <input [(ngModel)]="content" /> -->
-  <ion-button expand="block" (click)="saveEntry()">Analyze & Save</ion-button>
-
+  <textarea class="textareaCss" placeholder="Write today's journal..." [(ngModel)]="content" rows="7" cols="40"
+    autoGrow></textarea>
   <ion-list *ngIf="entries.length">
-    <ion-item-divider>Previous Entries</ion-item-divider>
+    <ion-item-divider class="prevEntryCss">Previous Entries</ion-item-divider>
     <ion-item *ngFor="let entry of entries">
-      <ion-label>
-        <h3>{{ entry.date | date:'mediumDate' }}</h3>
-        <p><strong>Sentiment:</strong> {{ entry.sentiment }}</p>
-        <p><strong>Tags:</strong> {{ entry.tags.join(', ') }}</p>
+      <ion-label class="labelCss">
+        <h3 class="dateCss">{{ entry.date | date:'mediumDate' }}</h3>
+        <p class="SentiPCss"><strong>Sentiment:</strong> <span class="sentiCss"
+            [ngClass]=" entry.sentiment =='negative'? ' negativeCss ' : entry.sentiment == 'neutral' || entry.sentiment == 'uncertain'?  '':  'potisiveCss'">
+            {{ entry.sentiment }} </span> </p>
+        <p class="txt"><strong>Tags:</strong> {{ entry.tags.join(', ') }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
 
 </ion-content>
+<ion-footer class="footerCss">
+  <ion-button expand="block" (click)="saveEntry()">Analyze & Save</ion-button>
+
+</ion-footer>

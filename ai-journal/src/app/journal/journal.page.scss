@@ -1,0 +1,49 @@
+.textareaCss {
+  background: unset;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footerCss {
+  background: #fff;
+}
+
+.prevEntryCss {
+  font-size: 16px;
+  color: gray;
+  margin: 12px 0;
+}
+.dateCss {
+  display: flex;
+  justify-content: right;
+  margin: 6px 0px;
+}
+.labelCss {
+  // display: flex;
+  // justify-content: left;
+  font-size: 16px;
+  color: gray;
+}
+.sentiCss {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+.SentiPCss {
+  margin: 8px 0;
+}
+.potisiveCss {
+  color: green;
+}
+.negativeCss {
+  color: red;
+}
+
+.txt {
+  text-transform: capitalize;
+}

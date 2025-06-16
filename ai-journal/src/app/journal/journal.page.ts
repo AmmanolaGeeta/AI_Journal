@@ -11,6 +11,10 @@ import {
   IonButton,
   IonList,
   IonLabel,
+  IonFooter,
+  IonIcon,
+  IonButtons,
+  
 } from '@ionic/angular/standalone';
 
 import { StorageService } from './../services/storage.service';
@@ -18,6 +22,7 @@ import { OpenaiService } from './../services/openai.service';
 import { JournalEntry } from './../models/journal-entry.model';
 import { v4 as uuidv4 } from 'uuid';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 // import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -33,10 +38,13 @@ import { LoadingController, ToastController } from '@ionic/angular';
     IonTitle,
     IonToolbar,
     IonButton,
+    IonButtons,
     IonList,
     IonLabel,
     CommonModule,
     FormsModule,
+    IonFooter,
+    IonIcon,
   ],
 })
 export class JournalPage implements OnInit {
@@ -47,7 +55,8 @@ export class JournalPage implements OnInit {
     private storage: StorageService,
     private openai: OpenaiService,
     private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -100,5 +109,10 @@ export class JournalPage implements OnInit {
   async showToast(msg: string) {
     const toast = await this.toastCtrl.create({ message: msg, duration: 2000 });
     await toast.present();
+  }
+
+  openGraph() {
+    // Placeholder for sentiment analysis action
+   this.router.navigate(['/analytics']);
   }
 }

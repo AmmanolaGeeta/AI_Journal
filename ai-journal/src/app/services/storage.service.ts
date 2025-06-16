@@ -1,16 +1,3 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class StorageService {
-
-//   constructor() { }
-// }
-
-
-// src/app/services/storage.service.ts
-
 import { Injectable } from '@angular/core';
 import { Storage } from '@capacitor/storage';
 import { JournalEntry } from '../models/journal-entry.model';

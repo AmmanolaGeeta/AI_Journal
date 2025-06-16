@@ -5,7 +5,9 @@ import {
   IonContent,
   IonHeader,
   IonTitle,
-  IonToolbar,
+  IonToolbar, 
+  IonBackButton,  
+  IonIcon,
 } from '@ionic/angular/standalone';
 
 import { StorageService } from './../services/storage.service';
@@ -26,6 +28,8 @@ import { BaseChartDirective } from 'ng2-charts';
     CommonModule,
     FormsModule,
     BaseChartDirective,
+    IonBackButton,
+    IonIcon,
   ],
 })
 export class AnalyticsPage implements OnInit {
@@ -36,13 +40,22 @@ export class AnalyticsPage implements OnInit {
   chartLabels: string[] = ['Positive', 'Neutral', 'Negative'];
   chartData: ChartData<'pie'> = {
     labels: this.chartLabels,
-    datasets: [{ data: [0, 0, 0] }],
+    datasets: [{ data: [0, 0, 0],
+    backgroundColor: [
+      '#4CAF50', // Positive - green
+      '#FFC107', // Neutral - amber
+      '#F44336'  // Negative - red
+    ]
+  }],
+    
   };
+ 
   chartOptions: ChartOptions = { responsive: true };
 
   constructor(private storage: StorageService) {}
 
   async ngOnInit() {
+  
     
     const entries = await this.storage.getEntries();
     console.log('chartData:', this.chartData ,entries);

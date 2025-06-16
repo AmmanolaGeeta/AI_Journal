@@ -1,14 +1,24 @@
 <ion-header>
   <ion-toolbar>
+    <ion-back-button defaultHref="/journal" slot="start"></ion-back-button>
+
     <ion-title>Mood Analytics</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <canvas baseChart
-    [data]="chartData"
-    [options]="chartOptions"
-    chartType="pie"
-    >
-  </canvas>
+  <div class="pieWrap">
+    <h2 class="pieTitle">Your Emotional Dashboard</h2>
+    <p class="pieDesc">The chart below represents a breakdown of your journal entries based on AI-powered sentiment
+      analysis. </p>
+    <canvas baseChart [data]="chartData" [options]="chartOptions" [type]="'pie'"> </canvas>
+
+    <div class="trackingBenefits">
+      <h6 class="trackingBenefitsTitle">Why Track Your Mood?</h6><br />
+      <div><ion-icon name="checkmark-circle"></ion-icon> Monitor emotional fluctuations</div>
+      <div class="txt1"><ion-icon name="checkmark-circle"></ion-icon> Identify recurring themes</div>
+      <div><ion-icon name="checkmark-circle"></ion-icon> Take proactive steps toward mental well-being</div>
+    </div>
+
+  </div>
 </ion-content>

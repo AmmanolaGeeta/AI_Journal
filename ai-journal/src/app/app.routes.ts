@@ -20,7 +20,7 @@ import { Routes } from '@angular/router';
 //   },
 // ];
 export const routes: Routes = [
-  { path: '', redirectTo: 'journal', pathMatch: 'full' },
+  { path: '', redirectTo: 'analytics', pathMatch: 'full' },
   { path: 'journal', loadComponent: () => import('./journal/journal.page').then(m => m.JournalPage) },
   { path: 'analytics', loadComponent: () => import('./analytics/analytics.page').then(m => m.AnalyticsPage) }
 ];
