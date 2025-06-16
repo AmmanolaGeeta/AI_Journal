@@ -1,3 +1,9 @@
+
+![image](https://github.com/user-attachments/assets/241f1cde-cabd-4f09-93e7-a13e60683fa2)
+
+
+
+
 AI Journal
 ======================
 A personal journaling app powered by OpenAI GPT-4.1 built with Ionic v7 + Angular v19.
