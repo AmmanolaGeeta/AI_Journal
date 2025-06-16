@@ -8,7 +8,7 @@
 AI Journal
 ======================
 A personal journaling app powered by OpenAI GPT-4.1 built with Ionic v7 + Angular v19.
-The goal was to build a fully client-side hybrid mobile app that uses AI for sentiment analysis and tag extraction without requiring any backend or database. All data is stored locally using Capacitor Storage.
+The app uses AI to analyze your journal entries, extract mood sentiment, generate relevant tags, and visualize your emotional patterns — all running fully client-side with no backend.
 
 Features
 - OpenAI GPT-4.1 integration for: Sentiment analysis (positive, neutral, negative etc.)
@@ -18,7 +18,8 @@ Features
 - Local storage using Capacitor
 
 - Mood analytics and sentiment charts via ng2-charts (Chart.js)
-
+  
+- Responsive UI & Screen Adaptability
 
 Built entirely with Ionic v7,  Angular v19 and Capacitor for hybrid mobile deployment
 
